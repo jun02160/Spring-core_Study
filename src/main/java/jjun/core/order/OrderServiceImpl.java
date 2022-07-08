@@ -54,7 +54,8 @@ public class OrderServiceImpl implements OrderService {
 //    @Autowired private MemberRepository memberRepository;
 //    @Autowired private DiscountPolicy discountPolicy;
 
-    
+
+
     /*
     일반 메서드 주입 -> 한 번에 여러 필드 주입 가능 (in 스프링 빈)
     */
