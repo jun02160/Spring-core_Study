@@ -6,10 +6,12 @@ import jjun.core.discount.RateDiscountPolicy;
 import jjun.core.member.Member;
 import jjun.core.member.MemberRepository;
 import jjun.core.member.MemoryMemberRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
+@RequiredArgsConstructor    // final이 붙은 필수 변수 값을 파라미터로 받는 생성자를 자동 생성 -- lombok
 public class OrderServiceImpl implements OrderService {
 
     private final MemberRepository memberRepository;
@@ -41,11 +43,11 @@ public class OrderServiceImpl implements OrderService {
     생성자 주입
     */
     // @Autowired
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
-        System.out.println("OrderServiceImpl Constructor called");
-        this.memberRepository = memberRepository;
-        this.discountPolicy = discountPolicy;
-    }
+//    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+//        System.out.println("OrderServiceImpl Constructor called");
+//        this.memberRepository = memberRepository;
+//        this.discountPolicy = discountPolicy;
+//    }
 
 
 
