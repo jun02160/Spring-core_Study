@@ -1,5 +1,6 @@
 package jjun.core.order;
 
+import jjun.core.annotation.MainDiscountPolicy;
 import jjun.core.discount.DiscountPolicy;
 import jjun.core.discount.FixDiscountPolicy;
 import jjun.core.discount.RateDiscountPolicy;
@@ -44,7 +45,7 @@ public class OrderServiceImpl implements OrderService {
     생성자 주입
     */
     @Autowired
-    public OrderServiceImpl(MemberRepository memberRepository, @Qualifier("mainDiscountPolicy") DiscountPolicy discountPolicy) {
+    public OrderServiceImpl(MemberRepository memberRepository, @MainDiscountPolicy DiscountPolicy discountPolicy) {
         System.out.println("OrderServiceImpl Constructor called");
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
