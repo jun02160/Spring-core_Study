@@ -1,6 +1,7 @@
 package jjun.core.common;
 
 import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -9,7 +10,7 @@ import java.util.UUID;
 
 
 @Component
-@Scope(value = "request")
+@Scope(value = "request", proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class MyLogger {
 
     private String uuid;   // 다른 HTTP 요청과 구분하기 위한 아이디
